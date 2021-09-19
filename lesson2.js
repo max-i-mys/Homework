@@ -20,3 +20,12 @@ const findTheMostCommonEl = (firstArr, secondArr) => {
 	}
 	return result.join(",")
 }
+
+// 2) Написать функцию, которая принимает на входе массив и на выходе выдает новый массив без дублирующихся элементов
+// Пример:
+// 		Исходный массив: [1, 2, 3, 3, 'a', 'test']
+// Результат выполнения: yourFunc([1, 2, 3, 3, 'a', 'test']) // [1, 2, 3, 'a', 'test']
+
+const createUniqueArray = array => {
+	return [...new Set(array)]
+}
