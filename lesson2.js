@@ -40,12 +40,15 @@ const createUniqueArray = array => {
 const creationAbbreviatedNumbers = array => {
 	return array.map(item => {
 		switch (true) {
-			case item >= 1000 && item < 999995:
-				return Math.round((item / 1000) * 100 + 0.05) / 100 + "K"
+			case item >= 995 && item < 999994:
+				item = Math.round((item / 1000) * 100 + 0.05) / 100
+				return (Number.isInteger(item) ? item : item.toFixed(2)) + "K"
 			case item >= 999995 && item < 999999994:
-				return Math.round((item / 1000000) * 100 + 0.05) / 100 + "M"
-			case item >= 999999994 && item < 999999999994:
-				return Math.round((item / 1000000000) * 100 + 0.05) / 100 + "B"
+				item = Math.round((item / 1000000) * 100 + 0.05) / 100
+				return (Number.isInteger(item) ? item : item.toFixed(2)) + "M"
+			case item >= 999999995 && item < 999999999994:
+				item = Math.round((item / 1000000000) * 100 + 0.05) / 100
+				return (Number.isInteger(item) ? item : item.toFixed(2)) + "B"
 			default:
 				return item
 		}
